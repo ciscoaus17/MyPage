@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8"> <!-- Sets character encoding to UTF-8 for proper text display -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- Ensures the page is responsive on mobile devices -->
+    <title>Welcome Page</title> <!-- Sets the title of the webpage displayed in the browser tab -->
+    <link rel="stylesheet" href="styles.css"> <!-- External CSS File -->
+</head>
+
+<body>
+
+    <!-- Sign Out Functionality -->
+    <script>
+        function signOut() {
+            const confirmation = confirm("Are you sure you want to logout?"); // Confirmation popup
+            if (confirmation) {
+                // Redirect to login page
+                window.location.href = 'login.html'; 
+                // Remove current page from history
+                setTimeout(() => {
+                    // Push a new state to prevent going back
+                    history.pushState(null, null, window.location.href);
+                    window.onpopstate = function () {
+                        history.pushState(null, null, window.location.href);
+                    };
+                }, 0); // Delay to allow navigation
+            }
+        }
+
+        // Prevent back navigation on page load
+        window.onload = function() {
+            history.pushState(null, null, window.location.href);
+            window.onpopstate = function () {
+                history.pushState(null, null, window.location.href);
+            };
+        };
+    </script>
+
+    <!-- Header Section -->
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="biodata.html">Biodata</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li><a href="about.html">About Us</a></li>
+                <li><a href="services.html">Services</a></li>
+                <li><a href="blog.html">Blog</a></li>
+                <li><a href="gallery.html">Gallery</a></li>
+                <li><a href="testimonials.html">Testimonials</a></li>
+                <li><a href="faq.html">FAQ</a></li>
+                <li><a href="resources.html">Resources</a></li>
+                <li><a href="events.html">Events</a></li>
+                <li><a href="#" onclick="signOut()">Sign Out</a></li> <!-- Sign Out link -->
+            </ul>
+        </nav>
+    </header>
+	
+	
+
+    <!-- Main Content Section -->
+    <main>
+        <section class="welcome-section">
+            <marquee>
+                <h1>Welcome to My Website</h1>
+            </marquee>
+            <p>Thank you for visiting. We hope you enjoy your stay.</p>
+            <p><a href="biodata.html" class="cta-button">Go to Biodata Page</a></p>
+        </section>
+    </main>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 My Website. All Rights Reserved.</p>
+        <p><a href="privacy-policy.html">Privacy Policy</a></p>
+    </footer>
+
+
+
+</body>
+
+</html>

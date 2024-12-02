@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Signup Page</title>
+    <link rel="stylesheet" href="styles0.css">
+    <script type="module" src="https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js"></script>
+    <script type="module" src="https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js"></script>
+</head>
+<body>
+
+    <header>
+        <nav>
+            <ul>
+                
+				<li><a href="index.html">Home</a></li>
+                <li><a href="login.html">Login</a></li>
+				
+            </ul>
+        </nav>
+    </header>
+	<button onclick="goBack()" style="width:80px;align-items:left;color:black;hover:red;">Go Back</button>
+
+    <main>
+        <section class="signup-section">
+            <div class="signup-box">
+                <h1>Create an Account</h1>
+                <form id="signup-form">
+                    <label for="signup-email">Email:</label>
+                    <input type="email" id="signup-email" name="email" required>
+                    
+                    <label for="signup-password">Password:</label>
+                    <input type="password" id="signup-password" name="password" required>
+                    
+                    <button type="submit">Sign Up</button>
+                </form>
+                <p><a href="login.html">Already have an account? Login here.</a></p>
+                <p id="error-message" style="color: red;"></p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 My Website. All Rights Reserved.</p>
+    </footer>
+
+<script type="module">
+    // Import the functions you need from the SDKs you need
+    import { initializeApp } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-app.js";
+    import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-analytics.js";
+    import { getAuth, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/11.0.1/firebase-auth.js";
+
+    // Your web app's Firebase configuration
+    const firebaseConfig = {
+        apiKey: "AIzaSyDMxEEYJZkfvyl0Wc7vFzB-P_tjUcZBNg4",
+        authDomain: "test-f6f1a.firebaseapp.com",
+        projectId: "test-f6f1a",
+        storageBucket: "test-f6f1a.appspot.com",
+        messagingSenderId: "712010472174",
+        appId: "1:712010472174:web:cf6592449434b113c7f1ff",
+        measurementId: "G-VXESZJ7DD3"
+    };
+
+    // Initialize Firebase
+    const app = initializeApp(firebaseConfig);
+    const analytics = getAnalytics(app);
+    const auth = getAuth();
+
+    // Handle signup form submission
+    document.getElementById('signup-form').addEventListener('submit', function(e) {
+        e.preventDefault(); // Prevent default form submission
+
+        const email = document.getElementById('signup-email').value;
+        const password = document.getElementById('signup-password').value;
+
+        // Create user with Firebase
+        createUserWithEmailAndPassword(auth, email, password)
+            .then((userCredential) => {
+                // Successfully registered
+                alert('Signup successful! You can now log in.');
+                // Optionally redirect to login page
+                window.location.href = 'login.html';
+            })
+            .catch((error) => {
+                const errorCode = error.code;
+                const errorMessage = error.message;
+                console.error('Error during signup:', errorCode, errorMessage);
+                
+                // Check for specific error codes
+                if (errorCode === 'auth/email-already-in-use') {
+                    document.getElementById('error-message').innerText = 'This email is already in use. Please use a different email.';
+                } else {
+                    // Display other error messages
+                    document.getElementById('error-message').innerText = errorMessage;
+                }
+            });
+    });
+</script>
+
+<script>
+    function goBack() {
+        if (window.history.length > 1) {
+            window.history.back();  // Go back to the previous page
+        } else {
+            alert('No previous page in history.');
+            // Optionally, redirect to a default page
+            // window.location.href = "default.html"; 
+        }
+    }
+</script>
+
+</body>
+</html>

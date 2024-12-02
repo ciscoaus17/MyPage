@@ -1,0 +1,144 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    background-color: green; /* Overrides previous background */
+    background-image: url('peakpx.jpg'); /* Change this to your image file */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+}
+
+/* Header Styles */
+header {
+    background-color: darkred; /* Semi-transparent header */
+    padding: 10px; /* Added padding */
+}
+
+nav {
+    text-align: center; /* Center the navigation links */
+}
+
+nav ul {
+    list-style-type: none; /* Remove bullet points */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+nav ul li {
+    display: inline; /* Display list items in a row */
+    margin-right: 15px; /* Space between list items */
+}
+
+nav ul li a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Text color */
+    font-weight: bold; /* Bold text */
+}
+
+nav ul li a:hover {
+    color: #f0f8ff; /* Change color on hover */
+}
+
+/* Main Section Styles */
+.welcome-section {
+    padding: 50px; /* Adds space around the section */
+    text-align: center; /* Centers text inside this section */
+}
+
+h1 {
+    color: black; /* black color for the heading */
+    font-family: Brush Script MT;
+    font-size: 50px; /* Fixed typo from '50x' to '50px' */
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+p {
+    font-size: 18px; /* Font size for paragraphs */
+    color: white;
+}
+
+.cta-button {
+    display: inline-block; /* Allows padding and margins */
+    padding: 10px 20px; /* Button padding */
+    background-color: #007bff; /* Button color */
+    color: white; /* Button text color */
+    text-decoration: none; /* Removes underline from link */
+    font-weight: bold; /* Bold text */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Login Box Styles */
+.login-box {
+    background-color: #f8f9fa; /* Light background color */
+    border: 1px solid #ced4da; /* Light border color */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 300px; /* Fixed width */
+    margin: 0 auto; /* Center the box horizontally */
+    text-align: center; /* Center text inside the box */
+}
+
+/* Signup Box Styles */
+.signup-box {
+    background-color: #f8f9fa; /* Light background color */
+    border: 1px solid #ced4da; /* Light border color */
+    border-radius: 8px; /* Rounded corners */
+    padding: 20px; /* Padding inside the box */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    width: 300px; /* Fixed width */
+    margin: 0 auto; /* Center the box horizontally */
+    text-align: center; /* Center text inside the box */
+}
+
+label {
+    margin-top: 10px; /* Space above labels */
+    display: block; /* Block display for labels */
+}
+
+input {
+    width: 100%; /* Full width input fields */
+    padding: 10px; /* Padding inside input fields */
+    margin: 5px 0; /* Vertical margin for spacing */
+    border: 1px solid #ced4da; /* Border for input fields */
+    border-radius: 4px; /* Rounded corners */
+}
+
+button {
+    width: 100%; /* Full width button */
+    padding: 10px; /* Padding inside button */
+    background-color: #007bff; /* Button background color */
+    color: white; /* Button text color */
+    border: none; /* No border */
+    border-radius: 4px; /* Rounded corners */
+    cursor: pointer; /* Pointer cursor on hover */
+}
+
+button:hover {
+    background-color: #0056b3; /* Darker color on hover */
+}
+
+/* Footer Styles */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: linear-gradient(to right, peachpuff, darkorange); /* Light orange to darker orange */
+    color: white; /* Change as needed */
+    text-align: center;
+    padding: 10px 0; /* Adjust for spacing */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+footer a {
+    color: #f0f8ff; /* Footer link color

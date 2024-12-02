@@ -1,0 +1,104 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f8ff;
+    color: #333;
+    margin: 0;
+    padding: 0;
+	background-color: green;
+	background-image: url('peakpx.jpg'); /* Change this to your image file */
+    background-size: cover; /* Cover the entire background */
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+}
+
+/* Header Styles */
+header {
+    background-color: darkred; /* Semi-transparent header */
+    padding: 10px; /* Added padding */
+	/* background-color: #007bff; */ /* Header background color */
+    padding: 10px; /* Added padding */
+	
+}
+
+nav {
+    text-align: center; /* Center the navigation links */
+}
+
+nav ul {
+    list-style-type: none; /* Remove bullet points */
+    margin: 0; /* Remove default margin */
+    padding: 0; /* Remove default padding */
+}
+
+nav ul li {
+    display: inline; /* Display list items in a row */
+    margin-right: 15px; /* Space between list items */
+}
+
+nav ul li a {
+    text-decoration: none; /* Remove underline */
+    color: white; /* Text color */
+    font-weight: bold; /* Bold text */
+}
+
+nav ul li a:hover {
+    color: #f0f8ff; /* Change color on hover */
+}
+
+/* Main Section Styles */
+.welcome-section {
+    padding: 50px; /* Adds space around the section */
+    text-align: center; /* Centers text inside this section */
+}
+
+h1 {
+    color: white; /* White color for the heading */
+	font-family: Brush Script MT;
+	font-size: 200x;
+	margin-top: 0px;
+	margin-bottom: 0px;
+}
+
+p {
+    font-size: 18px; /* Font size for paragraphs */
+	color: white;
+}
+
+.cta-button {
+    display: inline-block; /* Allows padding and margins */
+    padding: 10px 20px; /* Button padding */
+    background-color: #007bff; /* Button color */
+    color: white; /* Button text color */
+    text-decoration: none; /* Removes underline from link */
+    font-weight: bold; /* Bold text */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* Darker blue on hover */
+}
+
+/* Footer Styles */
+footer {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+	background: linear-gradient(to right, peachpuff, darkorange); /* Light orange to darker orange */
+    /*background-color: maroon;*/ /* Change as needed */
+    color: white; /* Change as needed */
+    text-align: center;
+    padding: 10px 0; /* Adjust for spacing */
+    z-index: 1000; /* Ensure it stays on top */
+}
+
+
+footer a {
+    color: #f0f8ff; /* Footer link color */
+    text-decoration: none; /* Remove underline */
+}
+
+footer a:hover {
+    color: #007bff; /* Change color on hover */
+}
